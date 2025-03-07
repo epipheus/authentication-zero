@@ -1,7 +1,6 @@
 class <%= migration_class_name %> < ActiveRecord::Migration[<%= ActiveRecord::Migration.current_version %>]
   def change
-    create_table :sign_in_tokens, id: :uuid  do |t|
-      t.references :user, null: false, foreign_key: true
-    end
+    enable_extension 'uuid-ossp'
+    enable_extension 'pgcrypto'
   end
 end

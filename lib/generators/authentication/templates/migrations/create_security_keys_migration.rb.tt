@@ -1,6 +1,6 @@
 class <%= migration_class_name %> < ActiveRecord::Migration[<%= ActiveRecord::Migration.current_version %>]
   def change
-    create_table :security_keys do |t|
+    create_table :security_keys, id: :uuid  do |t|
       t.references :user, null: false, foreign_key: true
       t.string :name,        null: false
       t.string :external_id, null: false, index: { unique: true }

@@ -45,6 +45,7 @@ class AuthenticationGenerator < Rails::Generators::Base
   end
 
   def create_configuration_files
+    copy_file "config/initializers/generators.rb"
     copy_file "config/initializers/omniauth.rb" if omniauthable?
     copy_file "config/initializers/webauthn.rb" if webauthn?
   end
@@ -54,6 +55,7 @@ class AuthenticationGenerator < Rails::Generators::Base
   end
 
   def create_migrations
+    migration_template "migrations/add_uuid_pgextensions.rb", "#{db_migrate_path}/add_uuid_pgextensions.rb"
     migration_template "migrations/create_accounts_migration.rb", "#{db_migrate_path}/create_accounts_migration.rb" if options.tenantable?
     migration_template "migrations/create_users_migration.rb", "#{db_migrate_path}/create_users.rb"
     migration_template "migrations/create_sessions_migration.rb", "#{db_migrate_path}/create_sessions.rb"
