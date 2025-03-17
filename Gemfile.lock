@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    authentication-zero (4.0.4)
+    authentication-zero (4.0.4.pre.uuid.pre.beta)
 
 GEM
   remote: https://rubygems.org/

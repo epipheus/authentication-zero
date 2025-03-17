@@ -1,3 +1,3 @@
 module AuthenticationZero
-  VERSION = "4.0.4-uuid-beta"
+  VERSION = "4.0.4-uuid-beta-a"
 end
